@@ -3,16 +3,16 @@
 import { useState } from 'react';
 
 export default function CalculadoraCLT() {
-  const [salario, setSalario] = useState('');
-  const [valeRefeicao, setValeRefeicao] = useState('');
-  const [valeTransporte, setValeTransporte] = useState('');
-  const [percentualVR, setPercentualVR] = useState('');
-  const [isSimples, setIsSimples] = useState(false);
-  const [percentualSistemaS, setPercentualSistemaS] = useState('');
-  const [percentualRat, setPercentualRat] = useState('');
-  const [percentualEducacao, setPercentualEducacao] = useState('');
+  const [salario, setSalario] = useState<string>('');
+  const [valeRefeicao, setValeRefeicao] = useState<string>('');
+  const [valeTransporte, setValeTransporte] = useState<string>('');
+  const [percentualVR, setPercentualVR] = useState<string>('');
+  const [isSimples, setIsSimples] = useState<boolean>(false);
+  const [percentualSistemaS, setPercentualSistemaS] = useState<string>('');
+  const [percentualRat, setPercentualRat] = useState<string>('');
+  const [percentualEducacao, setPercentualEducacao] = useState<string>('');
 
-  const calcularINSS = (salario) => {
+  const calcularINSS = (salario: number): number => {
     if (salario <= 1412.00) return salario * 0.075;
     if (salario <= 2666.68) return (salario * 0.09) - 21.18;
     if (salario <= 4000.03) return (salario * 0.12) - 101.18;
@@ -20,7 +20,7 @@ export default function CalculadoraCLT() {
     return 877.22;
   };
 
-  const calcularIRRF = (salario, inss) => {
+  const calcularIRRF = (salario: number, inss: number): number => {
     const base = salario - inss;
     if (base <= 2112.00) return 0;
     if (base <= 2826.65) return (base * 0.075) - 158.40;
