@@ -19,6 +19,6 @@
         }
       ]
     },
-    "include": ["next-env.d.ts", ".next/types/**/*.ts", "**/*.ts", "**/*.tsx", "page.js"],
+    "include": ["next-env.d.ts", ".next/types/**/*.ts", "**/*.ts", "**/*.tsx", "page.js", "layout.js"],
     "exclude": ["node_modules"]
   }
